@@ -1,0 +1,115 @@
+<section
+  id='edit-page'
+  class='min-h-screen flex items-center justify-center bg-gray-100 p-8'
+>
+  <div class='editSection bg-white shadow-lg rounded-lg p-8 max-w-md w-full'>
+    <div class='info-edit mb-6'>
+      <h2 class='text-2xl font-semibold text-gray-700 text-center'>
+        "One ring to rule them all, one ring to find them, one ring to bring
+        them all and in the darkness bind them."
+      </h2>
+    </div>
+
+    <form method='post' class='editForm space-y-4'>
+      <h2 class='text-3xl font-bold text-center text-gray-800 mb-6'>Edit Post</h2>
+      <ul class='noBullet space-y-4'>
+        <li>
+          <label
+            for='title'
+            class='block text-gray-600 font-medium mb-1'
+          >Title:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='title'
+            name='title'
+            value='{{movie.title}}'
+          />
+        </li>
+        <li>
+          <label
+            for='genre'
+            class='block text-gray-600 font-medium mb-1'
+          >Genre:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='genre'
+            name='genre'
+            value='{{movie.genre}}'
+          />
+        </li>
+        <li>
+          <label
+            for='director'
+            class='block text-gray-600 font-medium mb-1'
+          >Director:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='director'
+            name='director'
+            value='{{movie.director}}'
+          />
+        </li>
+        <li>
+          <label
+            for='year'
+            class='block text-gray-600 font-medium mb-1'
+          >Year:</label>
+          <input
+            type='number'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='year'
+            name='year'
+            value='{{movie.year}}'
+          />
+        </li>
+        <li>
+          <label for='image' class='block text-gray-600 font-medium mb-1'>Movie
+            Poster URL:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='image'
+            name='imageUrl'
+            value='{{movie.imageUrl}}'
+          />
+        </li>
+        <li>
+          <label
+            for='rating'
+            class='block text-gray-600 font-medium mb-1'
+          >Rating:</label>
+          <input
+            type='number'
+            max='5'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='rating'
+            name='rating'
+            value='{{movie.rating}}'
+          />
+        </li>
+        <li>
+          <label
+            for='description'
+            class='block text-gray-600 font-medium mb-1'
+          >Description:</label>
+          <textarea
+            id='description'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2 h-32'
+            name='description'
+          >{{movie.description}}</textarea>
+        </li>
+        <li id='center-btn' class='text-center'>
+          <button
+            type='submit'
+            id='edit-btn'
+            class='bg-yellow-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-yellow-700 transition-colors duration-300'
+          >Edit</button>
+        </li>
+      </ul>
+    </form>
+
+  </div>
+</section>
