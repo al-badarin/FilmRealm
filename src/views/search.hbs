@@ -1,0 +1,15 @@
+<section id="search" class="py-8">
+    <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Search</h1>
+    <form action="/search" method="GET" class="form flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+        <input type="text" class="search w-full md:w-1/4 border border-gray-300 rounded-lg p-2" name="title" value="{{title}}" placeholder="Title...">
+        <input type="text" name="genre" class="genre w-full md:w-1/4 border border-gray-300 rounded-lg p-2" value="{{genre}}" placeholder="Genre...">
+        <input type="number" name="year" class="year w-full md:w-1/4 border border-gray-300 rounded-lg p-2" value="{{year}}" placeholder="Year...">
+        <input type="submit" value="Search" class="bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer w-full md:w-auto">
+    </form>
+</section>
+
+<section id="catalog" class="py-8">
+    <div class="band grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+        {{> catalog }}
+    </div>
+</section>
