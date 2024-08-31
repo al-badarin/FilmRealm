@@ -48,7 +48,7 @@ Welcome to the 'FilmRealm - Explore the Boundless World of Cinema' project repos
 
 <p>
   <img src="https://img.icons8.com/color/48/000000/nodejs.png" alt="Node.js" />
-  <img src="https://img.icons8.com/color/48/000000/express.png" alt="Express" />
+  <img src="https://img.icons8.com/fluent/200/express-js.png" alt="Express" style="width: 48px; height: 48px;"  />
   <img src="https://img.icons8.com/color/48/000000/mongodb.png" alt="MongoDB" />
 </p>
 
