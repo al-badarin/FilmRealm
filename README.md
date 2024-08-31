@@ -1,6 +1,6 @@
 # [FilmRealm](https://film-realm.web.app)
 
-Welcome to the FilmRealm project repository. FilmRealm is an online platform dedicated to movie enthusiasts, offering a comprehensive collection of movies, cast information, and tools for creating and managing movie-related content. Our mission is to provide a seamless experience for users to explore, create, and share their love for cinema.
+Welcome to the 'FilmRealm - Explore the Boundless World of Cinema' project repository. FilmRealm is an online platform dedicated to movie enthusiasts, offering a comprehensive collection of movies, cast information, and tools for creating and managing movie-related content. Our mission is to provide a seamless experience for users to explore, create, and share their love for cinema.
 
 ## Table of Contents
 
