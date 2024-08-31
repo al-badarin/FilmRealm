@@ -40,8 +40,8 @@ Welcome to the FilmRealm project repository. FilmRealm is an online platform ded
   <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5" />
   <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" />
   <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" />
-  <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS" />
-  <img src="https://img.icons8.com/fluency/48/000000/handlebars.png" alt="Handlebars" />
+   <img src="https://img.icons8.com/color/48/000000/tailwind-css.png" alt="Tailwind CSS" />
+  <img src="https://www.vectorlogo.zone/logos/handlebarsjs/handlebarsjs-icon.svg" alt="Handlebars" width="48" height="48" />
 </p>
 
 ### Backend
