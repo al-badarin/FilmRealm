@@ -1,33 +1,37 @@
 const mongoose = require('mongoose');
 
 exports.getErrorMessage = (err) => {
-    let message = '';
+  let message = '';
 
-    if (err instanceof mongoose.MongooseError) {
-        message = Object.values(err.errors).at(0).message;
-    } else if (err instanceof Error) {
-        message = err.message;
-    }
+  if (err instanceof mongoose.MongooseError) {
+    message = Object.values(err.errors).at(0).message;
+  } else if (err instanceof Error) {
+    message = err.message;
+  }
 
-    return message;
-}
+  return message;
+};
 
 // middleware factory
 exports.validate = (Model) => async (req, res, next) => {
-    try {
-        const modelInstance = new Model(req.body);
+  try {
+    const modelInstance = new Model(req.body);
 
-        const isValid = await modelInstance.validate();
+    await modelInstance.validate(); // If invalid, it will throw an error
 
-        if (!isValid) {
-            return res.redirect('/404');
-        }
+    next();
 
-        next();
-    } catch (err) {
-        // Its too disruptive
-        const message = this.getErrorMessage(err);
+    // const isValid = await modelInstance.validate();
 
-        res.render('404', { error: message });
-    }
-}
+    // if (!isValid) {
+    //     return res.redirect('/404');
+    // }
+
+    // next();
+  } catch (err) {
+    // todo: Its too disruptive
+    const message = this.getErrorMessage(err);
+
+    res.render('auth/register', { ...req.body, error: message });
+  }
+};

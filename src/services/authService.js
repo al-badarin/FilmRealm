@@ -4,38 +4,42 @@ const jwt = require('../lib/jwt');
 const { SECRET } = require('../config/config');
 
 exports.register = async (userData) => {
-    const user = await User.findOne({ email: userData.email });
-    
-    if (user) {
-        throw new Error('Email already exists');
-    }
+  if (userData.password !== userData.rePassword) {
+    throw new Error('Passwords do not match');
+  }
 
-    return User.create(userData);
-}
+  const user = await User.findOne({ email: userData.email });
+
+  if (user) {
+    throw new Error('Email already exists');
+  }
+
+  return User.create(userData);
+};
 
 exports.login = async (email, password) => {
-    // Get user from db
-    const user = await User.findOne({ email });
+  // Get user from db
+  const user = await User.findOne({ email });
 
-    // Check if user exists
-    if (!user) {
-        throw new Error('Cannot find email or password');
-    }
+  // Check if user exists
+  if (!user) {
+    throw new Error('Cannot find email or password');
+  }
 
-    // Check if password is valid
-    const isValid = await bcrypt.compare(password, user.password);
-    if (!isValid) {
-        throw new Error('Cannot find email or password');
-    }
+  // Check if password is valid
+  const isValid = await bcrypt.compare(password, user.password);
+  if (!isValid) {
+    throw new Error('Cannot find email or password');
+  }
 
-    // Generate jwt token
-    const payload = {
-        _id: user._id,
-        email: user.email,
-    };
+  // Generate jwt token
+  const payload = {
+    _id: user._id,
+    email: user.email,
+  };
 
-    const token = await jwt.sign(payload, SECRET, { expiresIn: '2h' });
+  const token = await jwt.sign(payload, SECRET, { expiresIn: '2h' });
 
-    // return token
-    return token;
-}
+  // return token
+  return token;
+};
