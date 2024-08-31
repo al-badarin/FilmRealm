@@ -40,8 +40,8 @@ Welcome to the 'FilmRealm - Explore the Boundless World of Cinema' project repos
   <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML5" />
   <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS3" />
   <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript" />
-  <img src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-144x86-czphjb87.png" alt="Tailwind CSS" style="width: 48px; height: 48px;" />
   <img src="https://cdn.iconscout.com/icon/free/png-256/free-handlebars-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-9-pack-icons-282936.png" alt="Handlebars" style="width: 48px; height: 48px;" />
+  <img src="https://static-00.iconduck.com/assets.00/tailwind-css-icon-144x86-czphjb87.png" alt="Tailwind CSS" style="width: 48px; height: 48px;" />
 </p>
 
 ### Backend
