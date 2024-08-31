@@ -1,0 +1,96 @@
+<div class='min-h-screen flex items-center justify-center bg-gray-100 p-8'>
+  <div
+    class='bg-white shadow-lg rounded-lg flex flex-col lg:flex-row overflow-hidden max-w-4xl w-full'
+  >
+    <div class='lg:w-1/2'>
+      <img
+        src='/img/about-image.png'
+        alt='About Us Image'
+        class='w-full h-full object-cover'
+      />
+    </div>
+
+    <div class='p-8 lg:w-1/2 flex flex-col justify-center'>
+      <div id='second'>
+        <h1 class='text-2xl font-bold text-gray-900 mb-4'>Contacts:</h1>
+        <div id='contacts' class='text-gray-700 space-y-4'>
+          <div class='flex items-center space-x-2'>
+            <p class='font-medium'>Phone:</p>
+            <a
+              href='tel:+359888881476'
+              class='text-blue-600 hover:text-blue-800'
+            >+359 888881476</a>
+            <button
+              onclick='copyToClipboard("+359888881476")'
+              class='text-gray-500 hover:text-gray-700 focus:outline-none'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-5 w-5'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  d='M8 2a2 2 0 00-2 2v1h-.5A1.5 1.5 0 004 6.5v11A1.5 1.5 0 005.5 19h9a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0014.5 6H14V4a2 2 0 00-2-2H8zm4 3V4a1 1 0 10-2 0v1H8V4a2 2 0 114 0v1h-2z'
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class='flex items-center space-x-2'>
+            <p class='font-medium'>Email:</p>
+            <a
+              href='mailto:jamalalbadarin@gmail.com'
+              class='text-blue-600 hover:text-blue-800'
+            >jamalalbadarin@gmail.com</a>
+            <button
+              onclick='copyToClipboard("jamalalbadarin@gmail.com")'
+              class='text-gray-500 hover:text-gray-700 focus:outline-none'
+            >
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                class='h-5 w-5'
+                viewBox='0 0 20 20'
+                fill='currentColor'
+              >
+                <path
+                  d='M8 2a2 2 0 00-2 2v1h-.5A1.5 1.5 0 004 6.5v11A1.5 1.5 0 005.5 19h9a1.5 1.5 0 001.5-1.5v-11A1.5 1.5 0 0014.5 6H14V4a2 2 0 00-2-2H8zm4 3V4a1 1 0 10-2 0v1H8V4a2 2 0 114 0v1h-2z'
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div class='flex items-center space-x-2'>
+            <p class='font-medium'>Website:</p>
+            <a
+              href='https://al-badarin-developer.netlify.app/'
+              target='_blank'
+              class='text-blue-600 hover:text-blue-800'
+            >al-badarin-developer.netlify.app</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Notification Banner -->
+<div
+  id='notification'
+  class='fixed bottom-4 right-4 bg-green-500 text-white py-2 px-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300'
+  style='display: none;'
+>
+  Copied to clipboard!
+</div>
+
+<script>
+  function copyToClipboard(text) { navigator.clipboard.writeText(text).then(
+  function () { // Show notification const notification =
+  document.getElementById('notification'); notification.style.display = 'block';
+  notification.classList.remove('opacity-0');
+  notification.classList.add('opacity-100'); // Hide after 3 seconds
+  setTimeout(() => { notification.classList.remove('opacity-100');
+  notification.classList.add('opacity-0'); setTimeout(() => {
+  notification.style.display = 'none'; }, 300); }, 3000); }, function (err) {
+  console.error('Could not copy text: ', err); } ); }
+</script>
