@@ -1,0 +1,94 @@
+<section
+  id='create-cast'
+  class='min-h-screen flex items-center justify-center bg-gray-100 p-8'
+>
+  <div
+    class='createCastSection bg-white shadow-lg rounded-lg p-8 max-w-lg w-full'
+  >
+    <div class='info-cast mb-6 text-center'>
+      <h2 class='text-2xl font-semibold text-gray-700'>
+        "You're gonna need a bigger boat." — "Jaws," 1975.
+      </h2>
+    </div>
+
+    <form action='/cast/create' method='POST' class='createCastForm space-y-4'>
+      <h2 class='text-3xl font-bold text-center text-gray-800 mb-6'>Add Cast</h2>
+      <ul class='noBullet space-y-4'>
+        <li>
+          <label
+            for='name'
+            class='block text-gray-600 font-medium mb-1'
+          >Name:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='name'
+            name='name'
+            placeholder='Enter cast name'
+            required
+          />
+        </li>
+        <li>
+          <label
+            for='age'
+            class='block text-gray-600 font-medium mb-1'
+          >Age:</label>
+          <input
+            type='number'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='age'
+            name='age'
+            placeholder='Enter age'
+            required
+          />
+        </li>
+        <li>
+          <label
+            for='born'
+            class='block text-gray-600 font-medium mb-1'
+          >Born:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='born'
+            name='born'
+            placeholder='Enter place of birth'
+            required
+          />
+        </li>
+        <li>
+          <label
+            for='name-in-movie'
+            class='block text-gray-600 font-medium mb-1'
+          >Name in Movie:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='name-in-movie'
+            name='nameInMovie'
+            placeholder='Enter character name in movie'
+            required
+          />
+        </li>
+        <li>
+          <label for='image' class='block text-gray-600 font-medium mb-1'>Cast
+            Image URL:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='image'
+            name='castImage'
+            placeholder='Enter image URL'
+            required
+          />
+        </li>
+        <li id='center-btn' class='text-center'>
+          <button
+            id='create-btn'
+            class='bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300'
+          >Add Cast</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</section>
