@@ -1,52 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Catalog Page</title>
-    <!-- Do not forget to change the path to the css file -->
-    {{!-- <link href="/css/style.css" type="text/css" rel="stylesheet"> --}}
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>FilmRealm</title>
+    <link href='/css/style.css' type='text/css' rel='stylesheet' />
+    <script src='https://cdn.tailwindcss.com'></script>
+  </head>
 
-<body>
+  <body class='bg-gray-100 text-gray-900'>
 
-    <div id="box">
+    <div id='container' class='min-h-screen flex flex-col'>
 
-        {{#if error}}
-        <div class="error-container">
-            <p>{{error}}</p>
+      {{#if error}}
+        <div class='error-container bg-red-100 text-red-700 p-4 rounded mb-4'>
+          <p>{{error}}</p>
         </div>
-        {{/if}}
+      {{/if}}
 
-        <nav>
-            <img src="/img/logo.webp" alt="logo">
+      <header class='bg-white shadow'>
+        <nav class='container mx-auto flex justify-between items-center py-4'>
+          <div class='logo-container'>
+            <img src='/img/logo.webp' alt='FilmRealm Logo' class='h-12' />
+          </div>
 
-            <ul class="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/search">Search</a></li>
-                {{#if isAuthenticated}}
-                <li><a href="/create">Create Post</a></li>
-                <li><a href="/cast/create">Create Cast</a></li>
-                <li><a href="/auth/logout">Logout</a></li>
-                {{else}}
-                <li><a href="/auth/login">Login</a></li>
-                <li><a href="/auth/register">Register</a></li>
-                {{/if}}
-            </ul>
-
+          <ul class='menu flex space-x-6'>
+            <li><a
+                href='/'
+                class='text-gray-700 hover:text-gray-900'
+              >Home</a></li>
+            <li><a
+                href='/about'
+                class='text-gray-700 hover:text-gray-900'
+              >About</a></li>
+            <li><a
+                href='/search'
+                class='text-gray-700 hover:text-gray-900'
+              >Search</a></li>
+            {{#if isAuthenticated}}
+              <li><a
+                  href='/create'
+                  class='text-gray-700 hover:text-gray-900'
+                >Create Post</a></li>
+              <li><a
+                  href='/cast/create'
+                  class='text-gray-700 hover:text-gray-900'
+                >Create Cast</a></li>
+              <li><a
+                  href='/auth/logout'
+                  class='text-red-600 hover:text-red-800'
+                >Logout</a></li>
+            {{else}}
+              <li><a
+                  href='/auth/login'
+                  class='text-blue-600 hover:text-blue-800'
+                >Login</a></li>
+              <li><a
+                  href='/auth/register'
+                  class='text-blue-600 hover:text-blue-800'
+                >Register</a></li>
+            {{/if}}
+          </ul>
         </nav>
+      </header>
 
-        <main>
+      <main class='container mx-auto flex-grow py-8'>
+        {{{body}}}
+      </main>
 
-            {{{body}}}
-
-        </main>
-        <footer>
-            © JS Back-End Workshop
-        </footer>
+      <footer class='bg-gray-800 text-gray-200 py-4'>
+        <div class='container mx-auto text-center'>
+          <p>© 2024 FilmRealm - Explore the Boundless World of Cinema</p>
+        </div>
+      </footer>
     </div>
 
-</body>
+  </body>
 
 </html>
