@@ -1,0 +1,40 @@
+<section
+  id='attachCast'
+  class='min-h-screen flex items-center justify-center bg-gray-100 p-8'
+>
+  <div
+    class='attachCastSection bg-white shadow-lg rounded-lg p-8 max-w-lg w-full'
+  >
+    <h1 class='text-3xl font-bold text-center text-gray-800 mb-6'>Attach New
+      Cast</h1>
+    <div class='attach-form text-center'>
+      <h2 class='text-2xl font-semibold text-gray-700 mb-4'>{{title}}</h2>
+      <img
+        class='movie mb-6 mx-auto rounded-lg'
+        src='{{imageUrl}}'
+        alt='{{title}}'
+        class='h-48 w-auto object-cover shadow-md'
+      />
+      <form action='/movies/{{_id}}/attach' method='POST' class='space-y-4'>
+        <label for='cast' class='block text-gray-600 font-medium mb-2'>Select
+          Cast</label>
+        <select
+          id='cast'
+          name='cast'
+          class='w-full border border-gray-300 rounded-lg p-2'
+        >
+          <option value='none' selected>--------</option>
+          {{#each casts}}
+            <option value='{{_id}}'>{{name}}</option>
+          {{/each}}
+        </select>
+        <div id='center-btn' class='text-center'>
+          <button
+            id='create-btn'
+            class='bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300'
+          >Add Cast</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
