@@ -1,0 +1,111 @@
+<section
+  id='create-page'
+  class='min-h-screen flex items-center justify-center bg-gray-100 p-8'
+>
+  <div class='createSection bg-white shadow-lg rounded-lg p-8 max-w-lg w-full'>
+    <div class='info mb-6'>
+      <h2 class='text-2xl font-semibold text-gray-700 text-center'>
+        "Today, I consider myself the luckiest man on the face of the earth."
+        <br />
+        <span class='text-sm font-light text-gray-500'>-The Pride of the
+          Yankees, 1942</span>
+      </h2>
+    </div>
+
+    <form action='/create' method='POST' class='createForm space-y-4'>
+      <h2 class='text-3xl font-bold text-center text-gray-800 mb-6'>Add Movie</h2>
+      <ul class='noBullet space-y-4'>
+        <li>
+          <label
+            for='title'
+            class='block text-gray-600 font-medium mb-1'
+          >Title:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='title'
+            name='title'
+            value='{{title}}'
+          />
+        </li>
+        <li>
+          <label
+            for='genre'
+            class='block text-gray-600 font-medium mb-1'
+          >Genre:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='genre'
+            name='genre'
+            value='{{genre}}'
+          />
+        </li>
+        <li>
+          <label
+            for='director'
+            class='block text-gray-600 font-medium mb-1'
+          >Director:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='director'
+            name='director'
+          />
+        </li>
+        <li>
+          <label
+            for='year'
+            class='block text-gray-600 font-medium mb-1'
+          >Year:</label>
+          <input
+            type='number'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='year'
+            name='year'
+          />
+        </li>
+        <li>
+          <label for='image' class='block text-gray-600 font-medium mb-1'>Movie
+            Poster URL:</label>
+          <input
+            type='text'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='image'
+            name='imageUrl'
+          />
+        </li>
+        <li>
+          <label
+            for='rating'
+            class='block text-gray-600 font-medium mb-1'
+          >Rating:</label>
+          <input
+            type='number'
+            max='5'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2'
+            id='rating'
+            name='rating'
+          />
+        </li>
+        <li>
+          <label
+            for='description'
+            class='block text-gray-600 font-medium mb-1'
+          >Description:</label>
+          <textarea
+            id='description'
+            class='inputFields w-full border border-gray-300 rounded-lg p-2 h-32'
+            name='description'
+          ></textarea>
+        </li>
+        <li id='center-btn' class='text-center'>
+          <button
+            id='create-btn'
+            class='bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300'
+          >Add Movie</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</section>
