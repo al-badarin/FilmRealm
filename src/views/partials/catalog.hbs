@@ -1,20 +1,34 @@
-
 {{#each movies}}
-<div class="flip flip-vertical">
-    <div class="front">
-        <img src="{{imageUrl}}" alt="{{title}}">
+  <div
+    class='bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out'
+  >
+    <div class='relative h-48 bg-gray-200'>
+      <img
+        src='{{imageUrl}}'
+        alt='{{title}}'
+        class='h-full w-full object-cover'
+      />
     </div>
 
-    <div class="back">
-        <h1>{{title}}</h1>
-        <h2>Genre: {{genre}}</h2>
-        <p>Description: {{description}}</p>
-        <a href="/movies/{{_id}}" class="details">Details</a>
-        <a href="/movies/{{_id}}/attach" class="details">Attach</a>
+    <div class='p-4'>
+      <h2 class='text-xl font-semibold mb-2'>{{title}}</h2>
+      <p class='text-gray-700'><strong>Genre:</strong> {{genre}}</p>
+      <p class='text-gray-700 mt-2'><strong>Description:</strong>
+        {{description}}</p>
+      <div class='mt-4 flex justify-between items-center'>
+        <a
+          href='/movies/{{_id}}'
+          class='text-white bg-blue-500 hover:bg-blue-600 font-bold py-2 px-4 rounded'
+        >Details</a>
+        <a
+          href='/movies/{{_id}}/attach'
+          class='text-white bg-green-500 hover:bg-green-600 font-bold py-2 px-4 rounded'
+        >Attach</a>
+      </div>
     </div>
-</div>
+  </div>
 {{else}}
-<div class="no-posts">
-    <p class="no-offer">There are no posts yet...</p>
-</div>
+  <div class='text-center py-8'>
+    <p class='text-gray-600 text-lg'>There are no movies available...</p>
+  </div>
 {{/each}}
