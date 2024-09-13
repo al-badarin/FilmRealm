@@ -1,8 +1,9 @@
 {{#each movies}}
   <div
-    class='bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out'
+    class='bg-white shadow-md rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-xl flex flex-col'
   >
-    <div class='relative h-48 bg-gray-200'>
+    <!-- Movie Poster -->
+    <div class='relative h-64 bg-gray-200'>
       <img
         src='{{imageUrl}}'
         alt='{{title}}'
@@ -10,20 +11,62 @@
       />
     </div>
 
-    <div class='p-4'>
-      <h2 class='text-xl font-semibold mb-2'>{{title}}</h2>
-      <p class='text-gray-700'><strong>Genre:</strong> {{genre}}</p>
-      <p class='text-gray-700 mt-2'><strong>Description:</strong>
-        {{description}}</p>
+    <!-- Movie Details -->
+    <div class='p-6 flex flex-col justify-between flex-grow'>
+      <div>
+        <!-- Movie Title -->
+        <h2 class='text-2xl font-bold text-gray-900 mb-3'>{{title}}</h2>
+
+        <!-- Movie Genre -->
+        <p class='text-gray-700 mb-2'><strong>Genre:</strong> {{genre}}</p>
+
+        <!-- Movie Description -->
+        <p class='text-gray-600 text-sm mb-4'>
+          <strong>Description:</strong>
+          {{#ifCond description '>' 100}}
+            {{shorten description 100}}<span
+              class='text-blue-600 cursor-pointer hover:underline'
+            >...Read More</span>
+          {{else}}
+            {{description}}
+          {{/ifCond}}
+        </p>
+      </div>
+
+      <!-- Buttons (Details and Attach) -->
       <div class='mt-4 flex justify-between items-center'>
         <a
           href='/movies/{{_id}}'
-          class='text-white bg-blue-500 hover:bg-blue-600 font-bold py-2 px-4 rounded'
-        >Details</a>
+          class='flex items-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 ease-in-out'
+        >
+          <svg
+            class='w-5 h-5 mr-2'
+            fill='none'
+            stroke='currentColor'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+          ><path d='M19 12H5M12 19l-7-7 7-7'></path></svg>
+          Details
+        </a>
         <a
           href='/movies/{{_id}}/attach'
-          class='text-white bg-green-500 hover:bg-green-600 font-bold py-2 px-4 rounded'
-        >Attach</a>
+          class='flex items-center bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-200 ease-in-out'
+        >
+          <svg
+            class='w-5 h-5 mr-2'
+            fill='none'
+            stroke='currentColor'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            stroke-width='2'
+            viewBox='0 0 24 24'
+            xmlns='http://www.w3.org/2000/svg'
+          ><path d='M12 4v16m8-8H4'></path></svg>
+          Attach
+        </a>
       </div>
     </div>
   </div>
