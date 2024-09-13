@@ -23,16 +23,37 @@
           name='cast'
           class='w-full border border-gray-300 rounded-lg p-2'
         >
-          <option value='none' selected>--------</option>
+          <option value='none' selected>Choose actor</option>
           {{#each casts}}
             <option value='{{_id}}'>{{name}}</option>
           {{/each}}
         </select>
         <div id='center-btn' class='text-center'>
-          <button
-            id='create-btn'
-            class='bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300'
-          >Add Cast</button>
+
+          <!-- Details Button -->
+          <div class='mt-4 flex justify-between items-center'>
+            <button
+              id='create-btn'
+              class='bg-blue-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer'
+            >Add Cast</button>
+
+            <a
+              href='/movies/{{_id}}'
+              class='flex items-center bg-blue-600 hover:bg-blue-600 text-white font-semibold hover:bg-blue-700 py-2 px-6 rounded-lg transition duration-200 ease-in-out'
+            >
+              <svg
+                class='w-5 h-5 mr-2'
+                fill='none'
+                stroke='currentColor'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='2'
+                viewBox='0 0 24 24'
+                xmlns='http://www.w3.org/2000/svg'
+              ><path d='M19 12H5M12 19l-7-7 7-7'></path></svg>
+              Details
+            </a>
+          </div>
         </div>
       </form>
     </div>
