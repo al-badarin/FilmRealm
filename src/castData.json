@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Leonardo DiCaprio",
+    "age": 46,
+    "born": "Hollywood, California",
+    "nameInMovie": "Jack Dawson",
+    "castImage": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTgqNvTr0oYRdtjxrnxGzXUSDELsWiqVRajtCR7SwhRLcndkBIw"
+  },
+  {
+    "name": "Robert Downey Jr.",
+    "age": 56,
+    "born": "Manhattan, New York City",
+    "nameInMovie": "Tony Stark",
+    "castImage": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcST2yyzcNZq1Sw4nhADggTCG63vpj6yCSgNIo95eYjIoijPakIU"
+  },
+  {
+    "name": "Tom Hanks",
+    "age": 65,
+    "born": "Concord, California",
+    "nameInMovie": "Forrest Gump",
+    "castImage": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Tom_Hanks_TIFF_2019.jpg"
+  },
+  {
+    "name": "Joseph Gordon-Levitt",
+    "age": 40,
+    "born": "Los Angeles, California",
+    "nameInMovie": "Arthur",
+    "castImage": "https://m.media-amazon.com/images/M/MV5BMTY3NTk0NDI3Ml5BMl5BanBnXkFtZTgwNDA3NjY0MjE@._V1_.jpg"
+  }
+]
