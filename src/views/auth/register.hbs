@@ -11,7 +11,22 @@
         or worse, expelled. Now if you don't mind, I'm going to bed."
       </h2>
     </div>
-    <form action='/auth/register' method='post' class='registerForm space-y-4'>
+
+    <!-- Display server-side errors -->
+    {{#if error}}
+      <div
+        class='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4'
+      >
+        <span class='block sm:inline'>{{error}}</span>
+      </div>
+    {{/if}}
+
+    <form
+      id='registerForm'
+      action='/auth/register'
+      method='post'
+      class='registerForm space-y-4'
+    >
       <h2
         class='text-3xl font-bold text-center text-gray-800 mb-6'
       >Register</h2>
@@ -27,7 +42,10 @@
             id='email'
             name='email'
             value='{{email}}'
+            required
           />
+          <p id='email-error' class='text-red-500 text-sm hidden'>Please enter a
+            valid email.</p>
         </li>
         <li>
           <label
@@ -40,7 +58,10 @@
             id='password'
             name='password'
             value='{{password}}'
+            required
           />
+          <p id='password-error' class='text-red-500 text-sm hidden'>Password
+            must be at least 6 characters long and alphanumeric.</p>
         </li>
         <li>
           <label
@@ -52,15 +73,29 @@
             class='inputFields w-full border border-gray-300 rounded-lg p-2'
             id='repeat-password'
             name='rePassword'
+            required
           />
+          <p
+            id='repeat-password-error'
+            class='text-red-500 text-sm hidden'
+          >Passwords do not match.</p>
         </li>
         <li id='center-btn' class='text-center'>
           <button
             id='join-btn'
             class='bg-green-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-green-700 transition-colors duration-300'
-          >Register</button>
+          >
+            Register
+          </button>
         </li>
       </ul>
     </form>
   </div>
+
+  <!-- Load the external JS file -->
+  <script src='/js/formValidation.js'></script>
+  <script>
+    // Attach the form validation logic to the registration form
+    attachFormValidation('registerForm');
+  </script>
 </section>
