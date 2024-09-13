@@ -3,6 +3,13 @@ const Cast = require('../models/Cast');
 
 exports.getAll = () => Movie.find();
 
+// Get the latest movies sorted by creation date
+exports.getLatest = (limit) => {
+  return Movie.find()
+    .sort({ createdAt: 1 }) // Sort by createdAt field in descending order
+    .limit(limit); // Limit the number of results
+};
+
 // Filter search results based on title, genre, and year
 exports.search = (title, genre, year) => {
   let query = {};
