@@ -40,7 +40,7 @@ router.post('/login', async (req, res) => {
   } catch (err) {
     const message = getErrorMessage(err);
 
-    res.status(400).render('auth/login', { error: message });
+    res.status(400).render('auth/login', { email, error: message });
   }
 });
 
