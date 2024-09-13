@@ -1,8 +1,26 @@
-<section id="catalog" class="py-8">
-    <h1 class="text-3xl font-bold text-center mb-8">All Movies</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-4">
+<!-- Hero Section -->
+<section class="bg-cover bg-center h-screen" style="background-image: url('/img/hero-bg.webp');">
+  <div class="h-full flex flex-col items-center justify-center text-center bg-black bg-opacity-50 text-white px-6 py-12">
+    <h1 class="text-5xl font-bold mb-4">Welcome to FilmRealm</h1>
+    <p class="text-lg mb-8">
+      Explore the boundless world of cinema! Dive into a collection of movies with your favorite stars.
+    </p>
+    <a
+      href="#catalog"
+      class="bg-blue-500 hover:bg-blue-600 py-3 px-6 rounded-lg font-semibold transition-colors duration-300"
+    >
+      Browse Movies
+    </a>
+  </div>
+</section>
 
-        {{> catalog}}
-
+<!-- Movie Catalog Section -->
+<section id="catalog" class="py-16 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">All Movies</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <!-- Include the catalog partial to render the movie cards -->
+      {{> catalog}}
     </div>
+  </div>
 </section>
