@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "year": 2010,
+    "rating": 5,
+    "description": "A skilled thief, who commits corporate espionage by infiltrating the subconscious of his targets, is offered a chance to erase his criminal history.",
+    "imageUrl": "https://filmartgallery.com/cdn/shop/files/Inception-Vintage-Movie-Poster-Original-1-Sheet-27x41.jpg?v=1691730160"
+  },
+  {
+    "title": "Iron Man",
+    "genre": "Action",
+    "director": "Jon Favreau",
+    "year": 2008,
+    "rating": 4,
+    "description": "Tony Stark builds a high-tech suit to save the world.",
+    "imageUrl": "https://filmartgallery.com/cdn/shop/products/Iron-Man-Vintage-Movie-Poster-Original-1-Sheet-27x41.jpg?v=1657659788"
+  },
+  {
+    "title": "Avengers: Endgame",
+    "genre": "Action",
+    "director": "Anthony Russo, Joe Russo",
+    "year": 2019,
+    "rating": 5,
+    "description": "The Avengers assemble once more to undo Thanos' destruction.",
+    "imageUrl": "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg"
+  }
+]
