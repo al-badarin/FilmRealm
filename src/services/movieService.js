@@ -3,48 +3,57 @@ const Cast = require('../models/Cast');
 
 exports.getAll = () => Movie.find();
 
-// TODO: Filter result in mongoDB
+// Filter search results based on title, genre, and year
 exports.search = (title, genre, year) => {
-    let query = {};
+  let query = {};
 
-    if (title) {
-        query.title = new RegExp(title, 'i');
-    }
+  if (title) {
+    query.title = new RegExp(title, 'i'); // Case-insensitive search
+  }
 
-    if (genre) {
-        query.genre = genre.toLowerCase();
-    }
+  if (genre) {
+    query.genre = genre.toLowerCase();
+  }
 
-    if (year) {
-        query.year = year;
-    }
+  if (year) {
+    query.year = year;
+  }
 
-    return Movie.find(query);
+  return Movie.find(query);
 };
 
 exports.getOne = (movieId) => Movie.findById(movieId).populate('casts');
 
+// Create a new movie document
 exports.create = (movieData) => Movie.create(movieData);
 
-exports.edit = (movieId, movieData) => Movie.findByIdAndUpdate(movieId, movieData);
+// Update movie data by ID
+exports.edit = (movieId, movieData) =>
+  Movie.findByIdAndUpdate(movieId, movieData);
 
+// Attach a cast to a movie
 exports.attach = async (movieId, castId) => {
-    // return Movie.findByIdAndUpdate(movieId, { $push: { casts: castId } });
-    const movie = await this.getOne(movieId);
+  const movie = await this.getOne(movieId);
 
-    // This is optional and we don't need it in this case
-    // const cast = await Cast.findById(castId);
-    // cast.movies.push(movie);
-    // await cast.save();
+  // Check if the cast exists
+  const cast = await Cast.findById(castId);
+  if (!cast) {
+    throw new Error('Cast member not found');
+  }
 
-    // TODO: validate castId if exists
-    // TODO: validate if cast is already added
-    movie.casts.push(cast);
+  // Check if the cast is already added to the movie
+  if (movie.casts.includes(castId)) {
+    throw new Error('Cast member is already added to this movie');
+  }
 
-    await movie.save();
+  // Add the cast ID to the movie's cast array
+  movie.casts.push(castId);
 
-    return movie;
+  // Save the updated movie document
+  await movie.save();
+
+  return movie;
 };
 
+// Delete a movie by ID
 exports.delete = (movieId) => Movie.findByIdAndDelete(movieId);
-
